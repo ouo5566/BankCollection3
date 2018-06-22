@@ -13,14 +13,8 @@ public class UserBean extends MemberBean{
 
 	@Override
 	public String toString() {
-		return "[회원정보]\n"
-				+ "아이디 :" + uid
-				+ "\n비밀번호 : " + password
-				+ "\n이름  : " + name
-				+ "\n주민등록번호 : " + ssn
-				+ "\n주소 : " + address
-				+ "\n핸드폰번호 : " + phone
-				+ "\n신용등급 : " + creditRating + "\n";
+		return String.format("[회원정보]\n 아이디 : %s\n 비밀번호 : %s\n 이름 : %s\n 주민등록번호 : %s\n 주소 : %s\n 핸드폰번호 : %s\n 신용등급 : %s\n"
+				,uid,password,name,ssn,address,phone,creditRating);
 	}
 
 }

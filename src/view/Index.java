@@ -1,42 +1,111 @@
 package view;
 
-import javax.swing.JOptionPane;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-enum MemberButt {
-	//JOIN은 일반유저추가, ADD는 직원추가
-	EXIT,
-	JOIN, ADD, // void, 서비스에서 생성 : create
-	LIST, FIND_BY_ID, FIND_BY_NAME, COUNT, // return값 필요, 정보를 읽음 : read
-	//LIST, COUNT(int) : 모든정보(all) FIND_BY_ID : 하나의정보(one) FIND_BY_SOME : 여러 개의 정보(some)
-	UPDATE, // void, 정보를 수정 : update
-	WITHDRAWAL //void, 정보를 삭제 : delete
-}; // 이 4가지의 메소드의 앞 글자를 따서 C.R.U.D. 라고 부른다.
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
-public class Index {
-	public static void main(String[] args) {
-	while (true) {
-		switch ((MemberButt) JOptionPane
-				.showInputDialog(null, "무엇을 도와드릴까요?", "BIT_BANK", JOptionPane.QUESTION_MESSAGE, null, new MemberButt[] { MemberButt.EXIT, MemberButt.JOIN, MemberButt.ADD, MemberButt.LIST, MemberButt.FIND_BY_ID,
-								MemberButt.FIND_BY_NAME, MemberButt.COUNT, MemberButt.UPDATE, MemberButt.WITHDRAWAL}, null)) {
-			case EXIT:
-				return;
-			case JOIN :
-				break;
-			case ADD :
-				break;
-			case LIST:
-				break;
-			case FIND_BY_ID:
-				break;
-			case FIND_BY_NAME:
-				break;
-			case COUNT:
-				break;
-			case UPDATE :
-				break;
-			case WITHDRAWAL :
-				break;
+public class Index extends JFrame{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	Index(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // x 버튼을 누르면 종료
+		setTitle("관리자화면");
+		this.setLayout(new GridLayout(3, 3,10,10));
+		JButton btn1 = new JButton("회원가입");
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Register();
 			}
-		}
+			
+		});
+		this.add(btn1); // this 는 상위컴포넌트
+		
+		JButton btn2 = new JButton("통장생성");
+		btn2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new OpenAccount();
+			}
+			
+		});
+		this.add(btn2);
+		
+		JButton btn3 = new JButton("목록보기");
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		this.add(btn3);
+		JButton btn4 = new JButton("ID 검색");
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		this.add(btn4);
+		JButton btn5 = new JButton("이름 검색");
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		this.add(btn5);
+		JButton btn6 = new JButton("비번 변경");
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		this.add(btn6);
+		JButton btn7 = new JButton("입금");
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		this.add(btn7);
+		JButton btn8 = new JButton("출금");
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		this.add(btn8);
+		JButton btn9 = new JButton("회원 탈퇴");
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		this.add(btn9);
+		setSize(600, 200);
+		setLocation(100, 100);
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		new Index();
 	}
 }
